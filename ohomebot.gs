@@ -1,5 +1,5 @@
 
-const SHEET_URL = ""
+const SHEET_URL = "" // GoogleスプレッドシートURL
 
 // メンションされた
 function onMessage(e)
@@ -46,7 +46,7 @@ function msgget(name, sheets)
   msg = sheet.getRange(row, 2).getValue();
   
   // 名前置き換え
-  msg = msg.replace(/hoge/g, name)
+  msg = msg.replace(/NAME/g, name)
   
   return msg;
 }
@@ -70,7 +70,7 @@ function onAddToSpace(event)
   // メンションにより追加
   if (event.message)
   {
-    message = message + "`" + event.message.text + "`" + "って呼んでね！";
+    message = message + "\"" + event.message.text + "\"" + "って呼んでね！";
   }
 
   return { "text": message };
