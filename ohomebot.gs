@@ -1,5 +1,5 @@
 
-const SHEET_URL = "https://docs.google.com/spreadsheets/d/1PuMeKql3I2V8BsBANM5vMhokKhrhcZa7oVsD7TvbNB4/edit?usp=sharing"
+const SHEET_URL = ""
 
 // メンションされた
 function onMessage(e)
