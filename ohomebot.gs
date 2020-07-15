@@ -1,5 +1,5 @@
 
-const SHEET_URL = "https://docs.google.com/spreadsheets/d/1PuMeKql3I2V8BsBANM5vMhokKhrhcZa7oVsD7TvbNB4/edit?usp=sharing"
+const SHEET_URL = ""
 
 // メンションされた
 function onMessage(e)
@@ -17,7 +17,7 @@ function onMessage(e)
 function nameget(text, sheets)
 {
   // "@ohomebot"を除去
-  name = text.replace("@ohomebot(開発:G020C1118)","");
+  name = text.replace("@ohomebot","");
   
   // 名前未指定の場合、リストから取得
   if (name == "")
@@ -64,7 +64,7 @@ function onAddToSpace(event)
   else // グループチャットに追加
   {
     message = (event.space.displayName ? event.space.displayName : "this chat") +
-               " に追加ありがとう～`ohomebot`だよ！よろしくね！";
+               "に追加ありがとう～`ohomebot`だよ！よろしくね！";
   }
 
   // メンションにより追加
