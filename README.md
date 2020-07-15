@@ -16,7 +16,7 @@
 
 これらの準備ができたら、スプレッドシートURLを設定してください。
 ```javascript
-const SHEET_URL = ""
+const SHEET_URL = "" // GoogleスプレッドシートURL
 ```
 
 ## あそびかた
