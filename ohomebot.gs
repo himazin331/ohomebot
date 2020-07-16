@@ -1,5 +1,5 @@
 
-const SHEET_URL = ""
+const SHEET_URL = "" // GoogleスプレッドシートURL
 
 // メンションされた
 function onMessage(e)
