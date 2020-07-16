@@ -1,5 +1,5 @@
 
-const SHEET_URL = "" // GoogleスプレッドシートURL
+const SHEET_URL = "https://docs.google.com/spreadsheets/d/1PuMeKql3I2V8BsBANM5vMhokKhrhcZa7oVsD7TvbNB4/edit?usp=sharing"
 
 // メンションされた
 function onMessage(e)
@@ -17,19 +17,7 @@ function onMessage(e)
 function nameget(text, sheets)
 {
   // "@ohomebot"を除去
-  name = text.replace("@ohomebot","");
-  
-  // 名前未指定の場合、リストから取得
-  if (name == "")
-  {
-    // 乱数取得
-    var name_lastRow = sheets.getRange("A2:A26").getLastRow() // 行数取得
-    var row = Math.ceil(Math.random() * (name_lastRow-1)) + 1;
-
-    // 名前取得
-    var sheet = sheets.getActiveSheet();
-    name = sheet.getRange(row ,1).getValue();
-  }
+  name = text.replace("@ohomebot(開発:G020C1118)","");
   
   return name;
 }
@@ -38,15 +26,17 @@ function nameget(text, sheets)
 function msgget(name, sheets)
 {
   // 乱数取得
-  var msg_lastRow = sheets.getRange("B2:B41").getLastRow() // 行数取得
+  var msg_lastRow = sheets.getRange("A2:A81").getLastRow() // 行数取得
   var row = Math.ceil(Math.random() * (msg_lastRow-1)) + 1;
  
   // 定型文取得
   var sheet = sheets.getActiveSheet();
-  msg = sheet.getRange(row, 2).getValue();
+  msg = sheet.getRange(row, 1).getValue();
   
-  // 名前置き換え
-  msg = msg.replace(/NAME/g, name)
+  if (name != ""){
+    // 名前置き換え
+    msg = msg.replace(/君/g, name)
+  }
   
   return msg;
 }
